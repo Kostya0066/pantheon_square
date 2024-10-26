@@ -1,0 +1,89 @@
+# Виртуальное окружение
+flask/
+venv/
+ENV/
+env/
+.venv/
+
+# Файлы настроек IDE и редакторов
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Файлы конфигурации среды
+.env
+.env.*
+
+# Кэшированные файлы Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Логи и отладочные файлы
+*.log
+logs/
+log/
+*.out
+
+# Файлы базы данных
+*.sqlite3
+*.db
+
+# Файлы, созданные системой
+.DS_Store
+Thumbs.db
+
+# Папки с зависимостями
+*.egg-info/
+.eggs/
+dist/
+build/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg
+MANIFEST
+
+# Файлы и папки тестирования
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Файлы отчетов
+htmlcov/
+.tox/
+.nox/
+coverage/
+coverage_report/
+tests/__pycache__/
+
+# Файлы ngrok (если используются конфигурационные файлы)
+.ngrok2/
+ngrok.log
+
+# Файлы PyInstaller
+# Обычно используется для упаковки приложений, может быть не нужно в вашем случае
+# dist/
+# build/
+# *.spec
+
+# Файлы Jupyter Notebook (если используются)
+.ipynb_checkpoints
+
+# Секретные файлы
+secrets.yml
+secret_key.py
+
+# Прочие файлы и папки
+*.swp
+*.swo
+*.bak
+*.tmp

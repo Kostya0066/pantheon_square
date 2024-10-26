@@ -1,0 +1,161 @@
+/* Основные стили */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0d0d0d;
+    color: #ffffff;
+    font-size: 24px; /* Увеличен размер шрифта по умолчанию */
+}
+
+.header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.header img {
+    width: 320px; /* Увеличен размер логотипа */
+}
+
+.header-text {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.header-text h1, .header-text h2 {
+    margin: 10px;
+    font-size: 48px;
+}
+
+.container {
+    text-align: center;
+    padding: 40px;
+    margin-bottom: 20px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mint-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Кнопки для минтинга */
+.mint-buttons button {
+    width: 80%;
+    padding: 30px; /* Уменьшенный padding */
+    margin: 10px 0;
+    background-color: #1a1a1a;
+    border: none;
+    color: #ffffff;
+    font-size: 32px; /* Уменьшенный размер шрифта */
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.mint-buttons button:hover {
+    background-color: #333333;
+}
+
+/* Большая кнопка Farming */
+.big-button {
+    width: 90%;
+    padding: 80px;
+    background-color: #1a1a1a;
+    border: none;
+    color: #ffffff;
+    font-size: 72px;
+    cursor: pointer;
+    border-radius: 20px;
+    margin-bottom: 40px;
+}
+
+.big-button:hover {
+    background-color: #333333;
+}
+
+/* Кнопки TG Premium Boost и Daily Boost (уменьшенные) */
+.small-button {
+    width: 45%;
+    padding: 30px; /* Уменьшенный padding */
+    margin: 0 10px;
+    background-color: #1a1a1a;
+    border: none;
+    color: #ffffff;
+    font-size: 32px; /* Уменьшенный размер шрифта */
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.small-button:hover {
+    background-color: #333333;
+}
+
+/* Панель навигации - уменьшенные кнопки */
+.nav-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+.nav-bar a {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 32px;
+    padding: 30px;
+    border-radius: 10px;
+    margin: 0 5px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+}
+
+.nav-bar a:hover {
+    background-color: #333333;
+}
+
+/* Адаптивные стили для мобильных устройств */
+@media (max-width: 768px) {
+    .header img {
+        width: 160px;
+    }
+
+    .mint-buttons button {
+        width: 90%;
+        font-size: 20px;
+        padding: 15px;
+    }
+
+    .big-button {
+        width: 95%;
+        font-size: 44px;
+        padding: 35px;
+    }
+
+    .small-button {
+        width: 48%;
+        font-size: 20px;
+        padding: 15px;
+    }
+
+    .container {
+        padding: 20px;
+        margin-bottom: 10px;
+    }
+
+    .nav-bar {
+        padding: 8px 0;
+    }
+
+    .nav-bar a {
+        font-size: 28px;
+        padding: 20px;
+    }
+}
+

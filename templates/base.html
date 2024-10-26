@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}PS Ecosystem{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <!-- Верхняя часть с логотипом -->
+    <div class="header">
+        <img src="{{ url_for('static', filename='images/PS_ECO.png') }}" alt="Logo">
+    </div>
+
+    <!-- Основное содержимое страницы -->
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <!-- Нижняя панель навигации -->
+    <div class="nav-bar">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('task') }}">Task (Soon)</a>
+        <a href="{{ url_for('mint_ticket') }}">Mint Ticket</a>
+        <a href="{{ url_for('frens') }}">Frens</a>
+        <a href="{{ url_for('leaderboards') }}">Leaderboards</a>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
+
