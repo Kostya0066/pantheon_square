@@ -1,161 +1,419 @@
 /* Основные стили */
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #0d0d0d;
-    color: #ffffff;
-    font-size: 24px; /* Увеличен размер шрифта по умолчанию */
+    margin: 0; /* Убираем внешние отступы страницы */
+    font-family: 'Montserrat', sans-serif; /* Шрифт для всего приложения */
+    background-color: #0d0d0d; /* Цвет фона */
+    color: #ffffff; /* Основной цвет текста */
 }
 
-.header {
-    text-align: center;
-    padding: 20px 0;
-}
-
+/* Логотип */
 .header img {
-    width: 320px; /* Увеличен размер логотипа */
+    display: block; /* Логотип располагается как блочный элемент */
+    margin: 20px auto; /* Центрируем логотип */
+    width: 100px; /* Ширина логотипа */
 }
 
-.header-text {
-    text-align: center;
-    padding: 20px 0;
+/* Очки пользователя */
+.points {
+    text-align: center; /* Текст по центру */
+    font-size: 2rem; /* Размер шрифта */
+    margin: 20px 0; /* Отступы сверху и снизу */
 }
 
-.header-text h1, .header-text h2 {
-    margin: 10px;
-    font-size: 48px;
+/* Кнопки */
+.buttons-container {
+    display: flex; /* Flexbox для кнопок */
+    flex-direction: column; /* Кнопки располагаются вертикально */
+    align-items: center; /* Центрируем кнопки по горизонтали */
+    gap: 15px; /* Расстояние между кнопками */
+    padding: 20px; /* Внутренний отступ контейнера */
 }
 
-.container {
-    text-align: center;
-    padding: 40px;
-    margin-bottom: 20px;
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
+.btn-large, .btn-small {
+    border: 2px solid #ffffff; /* Граница кнопок */
+    border-radius: 10px; /* Закруглённые углы */
+    padding: 10px 20px; /* Внутренние отступы кнопок */
+    font-size: 1.2rem; /* Размер шрифта кнопок */
+    background: none; /* Без заливки фона */
+    color: #ffffff; /* Цвет текста */
+    cursor: pointer; /* Указатель при наведении */
+    transition: all 0.3s; /* Плавный переход при изменении состояния */
 }
 
-.mint-buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.btn-large {
+    width: 80%; /* Ширина больших кнопок */
 }
 
-/* Кнопки для минтинга */
-.mint-buttons button {
-    width: 80%;
-    padding: 30px; /* Уменьшенный padding */
-    margin: 10px 0;
-    background-color: #1a1a1a;
-    border: none;
-    color: #ffffff;
-    font-size: 32px; /* Уменьшенный размер шрифта */
-    cursor: pointer;
-    border-radius: 10px;
+.btn-small {
+    width: 45%; /* Ширина маленьких кнопок */
 }
 
-.mint-buttons button:hover {
-    background-color: #333333;
+.btn-small.inactive,
+.btn-large.inactive {
+    border-color: #555; /* Граница для неактивных кнопок */
+    color: #555; /* Цвет текста неактивных кнопок */
+    cursor: not-allowed; /* Изменение курсора для неактивных кнопок */
 }
 
-/* Большая кнопка Farming */
-.big-button {
-    width: 90%;
-    padding: 80px;
-    background-color: #1a1a1a;
-    border: none;
-    color: #ffffff;
-    font-size: 72px;
-    cursor: pointer;
-    border-radius: 20px;
-    margin-bottom: 40px;
+.btn-large:hover:not(.inactive),
+.btn-small:hover:not(.inactive) {
+    background: #6a00ff; /* Фон кнопок при наведении */
+    color: #ffffff; /* Цвет текста при наведении */
 }
 
-.big-button:hover {
-    background-color: #333333;
+/* Кнопки в ряд */
+.btn-row {
+    display: flex; /* Flexbox для расположения кнопок в ряд */
+    gap: 10px; /* Расстояние между кнопками */
+    justify-content: center; /* Центрируем кнопки в контейнере */
 }
 
-/* Кнопки TG Premium Boost и Daily Boost (уменьшенные) */
-.small-button {
-    width: 45%;
-    padding: 30px; /* Уменьшенный padding */
-    margin: 0 10px;
-    background-color: #1a1a1a;
-    border: none;
-    color: #ffffff;
-    font-size: 32px; /* Уменьшенный размер шрифта */
-    cursor: pointer;
-    border-radius: 10px;
+/* Контейнер задач */
+.tasks-container {
+    padding: 20px; /* Внутренние отступы */
+    text-align: center; /* Текст по центру */
 }
 
-.small-button:hover {
-    background-color: #333333;
+.task-list {
+    margin-top: 20px; /* Отступ сверху */
+    display: flex; /* Flexbox для списка задач */
+    flex-direction: column; /* Задачи располагаются вертикально */
+    gap: 15px; /* Расстояние между задачами */
 }
 
-/* Панель навигации - уменьшенные кнопки */
+/* Задача */
+.task-item {
+    display: flex; /* Flexbox для задачи */
+    justify-content: space-between; /* Элементы задачи распределены по краям */
+    align-items: center; /* Выравнивание по центру вертикально */
+    border: 1px solid #ffffff; /* Граница задачи */
+    border-radius: 10px; /* Закруглённые углы задачи */
+    padding: 10px 20px; /* Внутренние отступы */
+    background-color: #1a1a1a; /* Фон задачи */
+}
+
+.task-item span {
+    font-size: 1.2rem; /* Размер шрифта текста задачи */
+}
+
+.btn-task {
+    border: none; /* Убираем границу кнопки */
+    background: linear-gradient(45deg, #6a00ff, #cc00ff); /* Градиентный фон кнопки */
+    color: #ffffff; /* Цвет текста */
+    border-radius: 5px; /* Закруглённые углы кнопки */
+    padding: 5px 15px; /* Внутренние отступы */
+    cursor: pointer; /* Курсор-указатель */
+    font-size: 1rem; /* Размер шрифта кнопки */
+    transition: all 0.3s; /* Плавный переход при изменении состояния */
+}
+
+.btn-task:hover {
+    background: linear-gradient(45deg, #cc00ff, #6a00ff); /* Изменение градиента при наведении */
+}
+
+/* Страница Friends */
+.friends-container {
+    padding: 20px; /* Внутренние отступы */
+    text-align: center; /* Текст по центру */
+}
+
+.description {
+    margin: 10px 0; /* Отступ сверху и снизу */
+    font-size: 1.2rem; /* Размер шрифта */
+    color: #bbbbbb; /* Цвет текста */
+}
+
+.friends-list {
+    margin-top: 20px; /* Отступ сверху */
+    display: flex; /* Flexbox для списка друзей */
+    flex-direction: column; /* Друзья располагаются вертикально */
+    gap: 15px; /* Расстояние между друзьями */
+}
+
+/* Элемент списка друзей */
+.friend-item {
+    display: flex; /* Flexbox для друга */
+    justify-content: space-between; /* Элементы друга распределены по краям */
+    align-items: center; /* Выравнивание по центру вертикально */
+    border: 1px solid #ffffff; /* Граница элемента */
+    border-radius: 10px; /* Закруглённые углы */
+    padding: 10px 20px; /* Внутренние отступы */
+    background-color: #1a1a1a; /* Фон элемента */
+}
+
+.friend-name {
+    font-size: 1.2rem; /* Размер шрифта имени */
+}
+
+.friend-points {
+    font-size: 1.2rem; /* Размер шрифта очков друга */
+    color: #6a00ff; /* Цвет текста очков друга */
+}
+/* Страница Leaderboards */
+.leaderboards-container {
+    padding: 20px; /* Внутренние отступы */
+    text-align: center; /* Текст по центру */
+}
+
+.leaderboards-list {
+    margin-top: 20px; /* Отступ сверху */
+    display: flex; /* Flexbox для списка лидеров */
+    flex-direction: column; /* Лидеры располагаются вертикально */
+    gap: 15px; /* Расстояние между элементами */
+}
+
+/* Элемент списка лидеров */
+.leader-item, .current-user {
+    display: flex; /* Flexbox для элементов */
+    justify-content: space-between; /* Элементы распределены по краям */
+    align-items: center; /* Выравнивание по центру вертикально */
+    border: 1px solid #ffffff; /* Граница элемента */
+    border-radius: 10px; /* Закруглённые углы */
+    padding: 10px 20px; /* Внутренние отступы */
+    background-color: #1a1a1a; /* Фон элемента */
+}
+
+.current-user {
+    background-color: #333333; /* Фон текущего пользователя */
+    border: 2px solid #6a00ff; /* Граница текущего пользователя */
+}
+
+.leader-rank {
+    font-size: 1.2rem; /* Размер шрифта номера */
+    color: #6a00ff; /* Цвет номера */
+}
+
+.leader-name {
+    font-size: 1.2rem; /* Размер шрифта имени */
+}
+
+.leader-points {
+    font-size: 1rem; /* Размер шрифта очков */
+    color: #ffffff; /* Цвет текста очков */
+}
+
+.leader-friends {
+    font-size: 1rem; /* Размер шрифта количества друзей */
+    color: #aaaaaa; /* Цвет текста друзей */
+}
+
+/* Страница Daily Boost */
+.daily-boost-container {
+    padding: 20px; /* Внутренние отступы */
+    text-align: center; /* Текст по центру */
+}
+
+.boost-list {
+    margin-top: 20px; /* Отступ сверху */
+    display: flex; /* Flexbox для списка дней */
+    flex-direction: column; /* Дни располагаются вертикально */
+    gap: 15px; /* Расстояние между днями */
+}
+
+/* Элемент списка дней */
+.boost-item {
+    display: flex; /* Flexbox для элемента */
+    justify-content: space-between; /* Элементы распределены по краям */
+    align-items: center; /* Выравнивание по центру вертикально */
+    border: 1px solid #ffffff; /* Граница элемента */
+    border-radius: 10px; /* Закруглённые углы */
+    padding: 10px 20px; /* Внутренние отступы */
+    background-color: #1a1a1a; /* Фон элемента */
+}
+
+.day-label {
+    font-size: 1.2rem; /* Размер шрифта названия дня */
+    color: #ffffff; /* Цвет текста */
+}
+
+.multiplier {
+    font-size: 1rem; /* Размер шрифта множителя */
+    color: #6a00ff; /* Цвет множителя */
+}
+
+.status {
+    font-size: 1.2rem; /* Размер шрифта статуса */
+}
+
+.status.completed {
+    color: #00ff00; /* Цвет завершённого дня */
+}
+
+.status.pending {
+    color: #bbbbbb; /* Цвет ожидающего дня */
+}
+
+/* Страница Mint Ticket */
+.mint-ticket-container {
+    padding: 20px; /* Внутренние отступы */
+    text-align: center; /* Текст по центру */
+}
+
+.ticket-list {
+    margin-top: 20px; /* Отступ сверху */
+    display: flex; /* Flexbox для списка билетов */
+    flex-direction: column; /* Билеты располагаются вертикально */
+    gap: 15px; /* Расстояние между билетами */
+}
+
+.ticket-button {
+    border: 2px solid #ffffff; /* Граница кнопки */
+    border-radius: 10px; /* Закруглённые углы */
+    padding: 10px 20px; /* Внутренние отступы */
+    font-size: 1.2rem; /* Размер шрифта кнопки */
+    background: none; /* Без заливки */
+    color: #ffffff; /* Цвет текста */
+    cursor: pointer; /* Указатель при наведении */
+    transition: all 0.3s; /* Плавный переход при изменении состояния */
+}
+
+.ticket-button:hover {
+    background: #6a00ff; /* Фон при наведении */
+    color: #ffffff; /* Цвет текста при наведении */
+}
+
+/* Нижняя панель навигации */
 .nav-bar {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #1a1a1a;
-    display: flex;
-    justify-content: space-around;
-    padding: 10px 0;
+    position: fixed; /* Фиксированное положение */
+    bottom: 0; /* Панель находится внизу экрана */
+    width: 100%; /* Панель занимает всю ширину */
+    background-color: #1a1a1a; /* Фон панели */
+    display: flex; /* Flexbox для расположения элементов */
+    justify-content: space-around; /* Элементы равномерно распределены */
+    align-items: center; /* Выравнивание по центру вертикально */
+    padding: 10px 0; /* Внутренние отступы */
+    border-top: 2px solid #333; /* Верхняя граница панели */
 }
 
-.nav-bar a {
-    background-color: #1a1a1a;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 32px;
-    padding: 30px;
-    border-radius: 10px;
-    margin: 0 5px;
-    display: inline-block;
-    text-align: center;
-    cursor: pointer;
+.nav-item {
+    text-align: center; /* Текст по центру */
+    text-decoration: none; /* Убираем подчёркивание текста */
+    color: #ffffff; /* Цвет текста */
+    font-size: 0.9rem; /* Размер шрифта */
+    transition: all 0.3s; /* Плавный переход при изменении состояния */
+    display: flex; /* Flexbox для расположения текста и иконки */
+    flex-direction: column; /* Элементы располагаются вертикально */
+    align-items: center; /* Центрируем элементы */
+    gap: 5px; /* Расстояние между текстом и иконкой */
 }
 
-.nav-bar a:hover {
-    background-color: #333333;
+.nav-item i {
+    font-size: 1.5rem; /* Размер иконки */
 }
 
-/* Адаптивные стили для мобильных устройств */
+/* Подсветка активной кнопки */
+.nav-item.active {
+    color: #6a00ff; /* Цвет активной кнопки */
+}
+
+/* Шапка */
+.header {
+    display: flex; /* Flexbox для шапки */
+    justify-content: space-between; /* Элементы шапки по краям */
+    align-items: center; /* Выравнивание по центру вертикально */
+    padding: 10px 20px; /* Внутренние отступы */
+    background-color: #1a1a1a; /* Фон шапки */
+    border-bottom: 2px solid #333; /* Нижняя граница шапки */
+    color: #ffffff; /* Цвет текста */
+    font-size: 1rem; /* Размер текста */
+}
+
+/* Левый блок: информация о пользователе */
+.user-info {
+    display: flex; /* Flexbox для информации о пользователе */
+    align-items: center; /* Центрирование по вертикали */
+    gap: 10px; /* Расстояние между иконкой и текстом */
+    color: #ffffff; /* Цвет текста */
+}
+
+.user-info i {
+    font-size: 1.5rem; /* Размер иконки */
+}
+
+/* Правый блок: кошелек */
+.wallet-info a {
+    display: flex; /* Flexbox для кошелька */
+    align-items: center; /* Центрирование по вертикали */
+    gap: 10px; /* Расстояние между иконкой и текстом */
+    text-decoration: none; /* Убираем подчёркивание текста */
+    color: #ffffff; /* Цвет текста */
+    transition: color 0.3s; /* Плавный переход цвета */
+}
+
+.wallet-info i {
+    font-size: 1.5rem; /* Размер иконки */
+}
+
+.wallet-info a:hover {
+    color: #6a00ff; /* Цвет текста при наведении */
+}
+
+.center-logo {
+    display: block;
+    margin: 20px auto; /* Центрируем логотип */
+    max-width: 200px; /* Максимальная ширина логотипа */
+    height: auto; /* Сохраняем пропорции */
+}
+
+
+/* Адаптивность */
 @media (max-width: 768px) {
-    .header img {
-        width: 160px;
-    }
-
-    .mint-buttons button {
-        width: 90%;
-        font-size: 20px;
-        padding: 15px;
-    }
-
-    .big-button {
-        width: 95%;
-        font-size: 44px;
-        padding: 35px;
-    }
-
-    .small-button {
-        width: 48%;
-        font-size: 20px;
-        padding: 15px;
-    }
-
-    .container {
-        padding: 20px;
-        margin-bottom: 10px;
-    }
-
-    .nav-bar {
-        padding: 8px 0;
-    }
-
-    .nav-bar a {
-        font-size: 28px;
-        padding: 20px;
+    .center-logo {
+        max-width: 150px; /* Уменьшаем ширину логотипа для мобильных устройств */
     }
 }
 
+@media (max-width: 768px) {
+    /* Уменьшаем размер текста */
+    body {
+        font-size: 8px; /* Уменьшаем общий размер текста */
+    }
+
+    /* Очки пользователя */
+    .points {
+        font-size: 1.5rem; /* Уменьшаем размер текста для очков */
+    }
+
+    /* Кнопки */
+    .btn-large, .btn-small {
+        font-size: 1rem; /* Уменьшаем размер текста кнопок */
+        padding: 1px 8px; /* Уменьшаем внутренние отступы */
+    }
+
+    .btn-large {
+        width: 90%; /* Увеличиваем ширину для кнопок */
+    }
+
+    .btn-small {
+        width: 48%; /* Увеличиваем ширину маленьких кнопок */
+    }
+
+    /* Кнопки в ряд */
+    .btn-row {
+        gap: 8px; /* Уменьшаем расстояние между кнопками */
+    }
+
+    /* Логотип */
+    .center-logo {
+        max-width: 120px; /* Уменьшаем размер логотипа */
+    }
+
+    /* Элементы списков (задачи, друзья, лидерборды) */
+    .task-item, .friend-item, .leader-item, .current-user, .boost-item {
+        padding: 1px 8px; /* Уменьшаем внутренние отступы */
+        font-size: 0.9rem; /* Уменьшаем размер шрифта */
+    }
+
+    /* Панель навигации */
+    .nav-bar {
+        padding: 1px 0; /* Уменьшаем высоту панели */
+    }
+
+    .nav-item {
+        font-size: 0.8rem; /* Уменьшаем размер текста */
+    }
+
+    .nav-item i {
+        font-size: 1.2rem; /* Уменьшаем размер иконок */
+    }
+}

@@ -87,3 +87,6 @@ secret_key.py
 *.swo
 *.bak
 *.tmp
+
+
+.idea

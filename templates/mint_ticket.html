@@ -1,22 +1,19 @@
 {% extends "base.html" %}
 
-{% block title %}Mint Ticket - PS Ecosystem{% endblock %}
-
 {% block content %}
-<!-- Верхняя часть с заголовком -->
-<div class="header-text">
-    <h1>PS ECOSYSTEM</h1>
-    <h2>Crowdfunding Program</h2>
-</div>
+<div class="mint-ticket-container">
+    <!-- Заголовок -->
+    <h1 class="points">Mint Ticket</h1>
+    <p class="description">Choose your ticket to mint:</p>
 
-<!-- Кнопки для минтинга билетов -->
-<div class="mint-buttons">
-    <button class="soon-button">Minting of a Special Ticket</button>
-    <button class="soon-button">Minting of the Platinum Ticket</button>
-    <button class="soon-button">Minting of a Golden Ticket</button>
-    <button class="soon-button">Minting of the Silver Ticket</button>
-    <button class="soon-button">Minting of the Bronze Ticket</button>
-    <button class="soon-button">Minting a Test Ticket</button>
+    <!-- Список билетов -->
+    <div class="ticket-list">
+        <button class="ticket-button">Special Ticket</button>
+        <button class="ticket-button">Platinum Ticket</button>
+        <button class="ticket-button">Golden Ticket</button>
+        <button class="ticket-button">Silver Ticket</button>
+        <button class="ticket-button">Bronze Ticket</button>
+        <button class="ticket-button">Test Ticket</button>
+    </div>
 </div>
 {% endblock %}
-

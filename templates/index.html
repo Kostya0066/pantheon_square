@@ -1,15 +1,19 @@
 {% extends "base.html" %}
 
-{% block title %}Home - PS Ecosystem{% endblock %}
-
 {% block content %}
-<div class="container">
-    <h1 id="greeting">Points: 0</h1>
-    <button class="big-button soon-button">Farming (Coming Soon)</button>
-    <div class="button-row">
-        <button class="small-button soon-button">TG Premium Boost (Soon)</button>
-        <button class="small-button soon-button">Daily Boost (Soon)</button>
+<div class="home-container">
+    <!-- Очки пользователя -->
+    <h1 class="points">Points: 00.00</h1>
+
+    <!-- Кнопки -->
+    <div class="buttons-container">
+        <button class="btn-large" id="start-farming">Start Farming</button>
+        <div class="btn-row">
+            <button class="btn-small inactive" id="mini-game">Mini-game</button>
+            <button class="btn-small" id="daily-boost">Daily Boost</button>
+        </div>
+        <button class="btn-large" id="mint-ticket">Mint Ticket</button>
+        <button class="btn-large inactive" id="squares">Squares (Coming Soon)</button>
     </div>
 </div>
 {% endblock %}
-

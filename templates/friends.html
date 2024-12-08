@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="friends-container">
+    <!-- Заголовок -->
+    <h1 class="points">Friends</h1>
+    <p class="description">Invite friends to earn more points!</p>
+
+    <!-- Список друзей -->
+    <div class="friends-list">
+        <!-- Пример друга -->
+        <div class="friend-item">
+            <span class="friend-name">Username</span>
+            <span class="friend-points">+0.5 Points</span>
+        </div>
+        <div class="friend-item">
+            <span class="friend-name">Username</span>
+            <span class="friend-points">+0.5 Points</span>
+        </div>
+        <div class="friend-item">
+            <span class="friend-name">Username</span>
+            <span class="friend-points">+0.5 Points</span>
+        </div>
+    </div>
+
+    <!-- Кнопка приглашения -->
+    <button class="btn-large" id="invite-friend">Invite a Friend</button>
+</div>
+{% endblock %}

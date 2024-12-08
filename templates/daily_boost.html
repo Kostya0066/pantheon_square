@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="daily-boost-container">
+    <!-- Заголовок -->
+    <h1 class="points">Daily Boost</h1>
+    <p class="description">Log in daily to increase your multiplier!</p>
+
+    <!-- Список дней -->
+    <div class="boost-list">
+        <div class="boost-item">
+            <span class="day-label">Day 1</span>
+            <span class="multiplier">x1.1</span>
+            <span class="status completed">✅</span>
+        </div>
+        <div class="boost-item">
+            <span class="day-label">Day 2</span>
+            <span class="multiplier">x1.2</span>
+            <span class="status pending">🕒</span>
+        </div>
+        <div class="boost-item">
+            <span class="day-label">Day 3</span>
+            <span class="multiplier">x1.3</span>
+            <span class="status pending">🕒</span>
+        </div>
+    </div>
+</div>
+{% endblock %}

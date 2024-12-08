@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="leaderboards-container">
+    <!-- Заголовок -->
+    <h1 class="points">Leaderboards</h1>
+    <p class="description">Top players in the PS Ecosystem</p>
+
+    <!-- Список лидеров -->
+    <div class="leaderboards-list">
+        <!-- Пример лидера -->
+        <div class="leader-item">
+            <span class="leader-rank">1.</span>
+            <span class="leader-name">TopPlayer</span>
+            <span class="leader-points">Points: 5250</span>
+            <span class="leader-friends">Friends: 52</span>
+        </div>
+        <div class="leader-item">
+            <span class="leader-rank">2.</span>
+            <span class="leader-name">User123</span>
+            <span class="leader-points">Points: 4900</span>
+            <span class="leader-friends">Friends: 47</span>
+        </div>
+        <div class="leader-item">
+            <span class="leader-rank">3.</span>
+            <span class="leader-name">BestUser</span>
+            <span class="leader-points">Points: 4600</span>
+            <span class="leader-friends">Friends: 45</span>
+        </div>
+    </div>
+
+    <!-- Выделение текущей позиции пользователя -->
+    <div class="current-user">
+        <span class="leader-rank">178.</span>
+        <span class="leader-name">You</span>
+        <span class="leader-points">Points: 450</span>
+        <span class="leader-friends">Friends: 5</span>
+    </div>
+</div>
+{% endblock %}
